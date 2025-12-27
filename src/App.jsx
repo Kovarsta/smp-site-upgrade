@@ -142,11 +142,11 @@ export default function SMPInfoSite() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-neutral-100">
-      <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
+    <div className="min-h-screen w-full bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-neutral-100">
+      <div className="fixed inset-0 w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
       
-      <div className="relative">
-        <header className="max-w-6xl mx-auto px-8 pt-16 pb-10">
+      <div className="relative w-full">
+        <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
           <div className="flex items-center gap-4 mb-4">
             <div className="p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
               <Scroll className="w-8 h-8 text-emerald-400" />
@@ -155,54 +155,57 @@ export default function SMPInfoSite() {
               <h1 className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Private SMP
               </h1>
-              <p className="text-neutral-400 text-lg mt-1">
+              <p className="text-neutral-300 text-lg mt-1">
                 Season 3 — Running Minecraft 1.21.1
               </p>
             </div>
           </div>
-          <p className="text-neutral-400 text-lg max-w-3xl">
+          <p className="text-neutral-300 text-lg max-w-4xl">
             A carefully curated survival experience with performance mods, quality-of-life improvements, and vanilla-plus gameplay enhancements.
           </p>
         </header>
 
-        <main className="max-w-6xl mx-auto px-8 pb-20">
-          <Tabs defaultValue="mods" className="w-full">
-            <TabsList className="mb-8 bg-neutral-900/50 backdrop-blur-sm border border-neutral-800">
-              <TabsTrigger value="mods" className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-400">
-                Mods ({mods.length})
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <Tabs defaultValue="about" className="w-full">
+            <TabsList className="mb-8 bg-neutral-800/80 backdrop-blur-md border border-neutral-700 p-1.5 rounded-xl shadow-lg">
+              <TabsTrigger value="about" className="rounded-lg px-6 py-3 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-500/20 data-[state=active]:to-blue-600/20 data-[state=active]:text-blue-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-blue-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50">
+                Getting Started
               </TabsTrigger>
-              <TabsTrigger value="datapacks" className="data-[state=active]:bg-cyan-500/20 data-[state=active]:text-cyan-400">
-                Datapacks ({datapacks.length})
-              </TabsTrigger>
-              <TabsTrigger value="rules" className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-400">
+              <TabsTrigger value="rules" className="rounded-lg px-6 py-3 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-500/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-purple-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-purple-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50">
                 Server Rules
               </TabsTrigger>
-              <TabsTrigger value="about" className="data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400">
-                Getting Started
+              <TabsTrigger value="mods" className="rounded-lg px-6 py-3 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-emerald-500/20 data-[state=active]:to-emerald-600/20 data-[state=active]:text-emerald-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-emerald-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50">
+                Server Mods ({mods.length})
+              </TabsTrigger>
+              <TabsTrigger value="datapacks" className="rounded-lg px-6 py-3 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-cyan-500/20 data-[state=active]:to-cyan-600/20 data-[state=active]:text-cyan-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-cyan-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50">
+                Datapacks ({datapacks.length})
+              </TabsTrigger>
+              <TabsTrigger value="client-mods" className="rounded-lg px-6 py-3 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-amber-500/20 data-[state=active]:to-amber-600/20 data-[state=active]:text-amber-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-amber-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50">
+                Client Mods
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="mods" className="space-y-6">
-              <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-lg p-6 mb-8">
-                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <div className="bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-lg p-6 mb-8">
+                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2 text-neutral-100">
                   <Shield className="w-6 h-6 text-emerald-400" />
                   Server Mods
                 </h2>
-                <p className="text-neutral-400">
+                <p className="text-neutral-300">
                   These mods run on the server and enhance performance, gameplay, and functionality. Most are server-side only and don't require client installation.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {mods.map((mod, idx) => (
-                  <Card key={idx} className="bg-neutral-900/50 backdrop-blur-sm border-neutral-800 hover:border-emerald-500/30 transition-all duration-300">
+                  <Card key={idx} className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-emerald-500/50 hover:bg-neutral-800/90 transition-all duration-300">
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-3">{mod.name}</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-neutral-100">{mod.name}</h3>
                       <div className="flex gap-2 mb-4 flex-wrap">
-                        <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">{mod.category}</Badge>
-                        <Badge variant="secondary" className="bg-neutral-800 text-neutral-300">{mod.type}</Badge>
+                        <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">{mod.category}</Badge>
+                        <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">{mod.type}</Badge>
                       </div>
-                      <p className="text-neutral-400 text-sm leading-relaxed">
+                      <p className="text-neutral-300 text-sm leading-relaxed">
                         {mod.description}
                       </p>
                     </CardContent>
@@ -212,26 +215,26 @@ export default function SMPInfoSite() {
             </TabsContent>
 
             <TabsContent value="datapacks" className="space-y-6">
-              <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-lg p-6 mb-8">
-                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <div className="bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-lg p-6 mb-8">
+                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2 text-neutral-100">
                   <Scroll className="w-6 h-6 text-cyan-400" />
                   Custom Datapacks
                 </h2>
-                <p className="text-neutral-400">
+                <p className="text-neutral-300">
                   Vanilla-friendly gameplay enhancements using Minecraft's built-in datapack system. These modify recipes, loot tables, and add custom functions.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {datapacks.map((pack, idx) => (
-                  <Card key={idx} className="bg-neutral-900/50 backdrop-blur-sm border-neutral-800 hover:border-cyan-500/30 transition-all duration-300">
+                  <Card key={idx} className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-cyan-500/50 hover:bg-neutral-800/90 transition-all duration-300">
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-3">{pack.name}</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-neutral-100">{pack.name}</h3>
                       <div className="flex gap-2 mb-4 flex-wrap">
-                        <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/30">{pack.category}</Badge>
-                        <Badge variant="secondary" className="bg-neutral-800 text-neutral-300">{pack.type}</Badge>
+                        <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30">{pack.category}</Badge>
+                        <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">{pack.type}</Badge>
                       </div>
-                      <p className="text-neutral-400 text-sm leading-relaxed">
+                      <p className="text-neutral-300 text-sm leading-relaxed">
                         {pack.description}
                       </p>
                     </CardContent>
@@ -240,13 +243,105 @@ export default function SMPInfoSite() {
               </div>
             </TabsContent>
 
+            <TabsContent value="client-mods" className="space-y-6">
+              <div className="bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-lg p-6 mb-8">
+                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2 text-neutral-100">
+                  <Wrench className="w-6 h-6 text-amber-400" />
+                  Recommended Client Mods
+                </h2>
+                <p className="text-neutral-300">
+                  Optional mods you can install on your client to enhance your gameplay experience. These are not required but highly recommended.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-amber-500/50 hover:bg-neutral-800/90 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-neutral-100">Sodium</h3>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">Performance</Badge>
+                      <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">Client-side</Badge>
+                    </div>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      Massive FPS boost by optimizing rendering engine. Can improve performance by 200-300% on most systems. Essential for smooth gameplay.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-amber-500/50 hover:bg-neutral-800/90 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-neutral-100">Iris Shaders</h3>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">Visual</Badge>
+                      <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">Client-side</Badge>
+                    </div>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      Beautiful shader support compatible with Sodium. Adds realistic lighting, shadows, and water effects without killing performance.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-amber-500/50 hover:bg-neutral-800/90 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-neutral-100">Xaero's Minimap</h3>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">Navigation</Badge>
+                      <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">Client-side</Badge>
+                    </div>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      Clean minimap with waypoint system. Helps navigate the world and mark important locations. Fair and doesn't reveal caves.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-amber-500/50 hover:bg-neutral-800/90 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-neutral-100">Mod Menu</h3>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">Utility</Badge>
+                      <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">Client-side</Badge>
+                    </div>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      Adds a clean mod list menu to manage and configure your installed mods. Essential for anyone running multiple mods.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-amber-500/50 hover:bg-neutral-800/90 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-neutral-100">AppleSkin</h3>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">Quality of Life</Badge>
+                      <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">Client-side</Badge>
+                    </div>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      Shows food saturation and hunger restoration values. Helps optimize your food choices and manage hunger better.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-amber-500/50 hover:bg-neutral-800/90 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-neutral-100">Item Scroller</h3>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">Quality of Life</Badge>
+                      <Badge variant="secondary" className="bg-neutral-700/50 text-neutral-200 border-neutral-600">Client-side</Badge>
+                    </div>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      Enhanced inventory management with scroll wheel controls. Move items quickly and efficiently between inventories.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
             <TabsContent value="rules" className="space-y-6">
-              <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-lg p-6 mb-8">
-                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <div className="bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-lg p-6 mb-8">
+                <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2 text-neutral-100">
                   <Shield className="w-6 h-6 text-purple-400" />
                   Community Guidelines
                 </h2>
-                <p className="text-neutral-400">
+                <p className="text-neutral-300">
                   Simple rules to keep the server fun and fair for everyone. Breaking these rules may result in warnings or temporary bans.
                 </p>
               </div>
@@ -255,15 +350,15 @@ export default function SMPInfoSite() {
                 {rules.map((rule, idx) => {
                   const Icon = rule.icon;
                   return (
-                    <Card key={idx} className="bg-neutral-900/50 backdrop-blur-sm border-neutral-800 hover:border-purple-500/30 transition-all duration-300">
+                    <Card key={idx} className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 hover:border-purple-500/50 hover:bg-neutral-800/90 transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="p-3 bg-purple-500/10 rounded-lg border border-purple-500/20 shrink-0">
                             <Icon className="w-6 h-6 text-purple-400" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-semibold mb-3">{rule.title}</h3>
-                            <p className="text-neutral-400 text-sm leading-relaxed">
+                            <h3 className="text-xl font-semibold mb-3 text-neutral-100">{rule.title}</h3>
+                            <p className="text-neutral-300 text-sm leading-relaxed">
                               {rule.description}
                             </p>
                           </div>
@@ -274,10 +369,10 @@ export default function SMPInfoSite() {
                 })}
               </div>
 
-              <Card className="bg-neutral-900/50 backdrop-blur-sm border-neutral-800 mt-8">
+              <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700 mt-8">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4 text-amber-400">Bannable Offenses</h3>
-                  <ul className="space-y-2 text-neutral-400 text-sm">
+                  <ul className="space-y-2 text-neutral-300 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-amber-400 mt-1">•</span>
                       <span>Using hacked clients, x-ray resource packs, or any unauthorized mods that give unfair advantages</span>
@@ -300,81 +395,81 @@ export default function SMPInfoSite() {
             </TabsContent>
 
             <TabsContent value="about" className="space-y-6">
-              <Card className="bg-neutral-900/50 backdrop-blur-sm border-neutral-800">
+              <Card className="bg-neutral-800/70 backdrop-blur-sm border-neutral-700">
                 <CardContent className="p-8 space-y-6">
                   <div>
-                    <h2 className="text-3xl font-semibold mb-4 flex items-center gap-2">
+                    <h2 className="text-3xl font-semibold mb-4 flex items-center gap-2 text-neutral-100">
                       <Wrench className="w-7 h-7 text-blue-400" />
                       Getting Started
                     </h2>
-                    <p className="text-neutral-400 leading-relaxed">
+                    <p className="text-neutral-300 leading-relaxed">
                       Welcome to the SMP! This server runs on Fabric with a mix of performance mods and vanilla-plus datapacks to enhance the survival experience without straying too far from vanilla Minecraft.
                     </p>
                   </div>
 
-                  <div className="border-t border-neutral-800 pt-6">
+                  <div className="border-t border-neutral-700 pt-6">
                     <h3 className="text-xl font-semibold mb-3 text-emerald-400">How Mods Work</h3>
-                    <p className="text-neutral-400 text-sm leading-relaxed mb-3">
+                    <p className="text-neutral-300 text-sm leading-relaxed mb-3">
                       Most mods on this server are server-side only, meaning you can connect with a vanilla Minecraft client. Mods like Lithium and Starlight optimize server performance behind the scenes, while Polymer allows custom items to work without requiring players to install anything.
                     </p>
-                    <p className="text-neutral-400 text-sm leading-relaxed">
+                    <p className="text-neutral-300 text-sm leading-relaxed">
                       Optional client-side mods like Simple Voice Chat enhance your experience but aren't required. If you want voice chat, you'll need to install that mod separately.
                     </p>
                   </div>
 
-                  <div className="border-t border-neutral-800 pt-6">
+                  <div className="border-t border-neutral-700 pt-6">
                     <h3 className="text-xl font-semibold mb-3 text-cyan-400">How Datapacks Work</h3>
-                    <p className="text-neutral-400 text-sm leading-relaxed mb-3">
+                    <p className="text-neutral-300 text-sm leading-relaxed mb-3">
                       Datapacks modify the game using Minecraft's built-in systems. They can add custom recipes, modify loot tables, create new commands, or trigger functions based on player actions. Everything works through vanilla Minecraft's command and function system.
                     </p>
-                    <p className="text-neutral-400 text-sm leading-relaxed">
+                    <p className="text-neutral-300 text-sm leading-relaxed">
                       Unlike mods, datapacks can't add new blocks or items from scratch, but they can customize existing gameplay in creative ways. The datapacks on this server focus on quality-of-life improvements and balanced gameplay enhancements.
                     </p>
                   </div>
 
-                  <div className="border-t border-neutral-800 pt-6">
+                  <div className="border-t border-neutral-700 pt-6">
                     <h3 className="text-xl font-semibold mb-3 text-purple-400">Server Commands</h3>
-                    <div className="bg-neutral-950/50 rounded-lg p-4 space-y-2 font-mono text-sm">
+                    <div className="bg-neutral-900/50 rounded-lg p-4 space-y-2 font-mono text-sm">
                       <div className="flex gap-3">
                         <span className="text-emerald-400">/home</span>
-                        <span className="text-neutral-500">Teleport to your set home location</span>
+                        <span className="text-neutral-400">Teleport to your set home location</span>
                       </div>
                       <div className="flex gap-3">
                         <span className="text-emerald-400">/sethome</span>
-                        <span className="text-neutral-500">Set your home point at current location</span>
+                        <span className="text-neutral-400">Set your home point at current location</span>
                       </div>
                       <div className="flex gap-3">
                         <span className="text-emerald-400">/spawn</span>
-                        <span className="text-neutral-500">Return to the world spawn point</span>
+                        <span className="text-neutral-400">Return to the world spawn point</span>
                       </div>
                       <div className="flex gap-3">
                         <span className="text-emerald-400">/coords</span>
-                        <span className="text-neutral-500">Toggle coordinate display in action bar</span>
+                        <span className="text-neutral-400">Toggle coordinate display in action bar</span>
                       </div>
                       <div className="flex gap-3">
                         <span className="text-emerald-400">/afk</span>
-                        <span className="text-neutral-500">Mark yourself as away from keyboard</span>
+                        <span className="text-neutral-400">Mark yourself as away from keyboard</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="border-t border-neutral-800 pt-6">
+                  <div className="border-t border-neutral-700 pt-6">
                     <h3 className="text-xl font-semibold mb-3 text-blue-400">Server Information</h3>
                     <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      <div className="bg-neutral-950/50 rounded-lg p-4">
-                        <p className="text-neutral-500 mb-1">Minecraft Version</p>
+                      <div className="bg-neutral-900/50 rounded-lg p-4">
+                        <p className="text-neutral-400 mb-1">Minecraft Version</p>
                         <p className="text-neutral-100 font-semibold">1.21.1</p>
                       </div>
-                      <div className="bg-neutral-950/50 rounded-lg p-4">
-                        <p className="text-neutral-500 mb-1">Mod Loader</p>
+                      <div className="bg-neutral-900/50 rounded-lg p-4">
+                        <p className="text-neutral-400 mb-1">Mod Loader</p>
                         <p className="text-neutral-100 font-semibold">Fabric</p>
                       </div>
-                      <div className="bg-neutral-950/50 rounded-lg p-4">
-                        <p className="text-neutral-500 mb-1">Difficulty</p>
+                      <div className="bg-neutral-900/50 rounded-lg p-4">
+                        <p className="text-neutral-400 mb-1">Difficulty</p>
                         <p className="text-neutral-100 font-semibold">Hard</p>
                       </div>
-                      <div className="bg-neutral-950/50 rounded-lg p-4">
-                        <p className="text-neutral-500 mb-1">World Border</p>
+                      <div className="bg-neutral-900/50 rounded-lg p-4">
+                        <p className="text-neutral-400 mb-1">World Border</p>
                         <p className="text-neutral-100 font-semibold">10,000 blocks</p>
                       </div>
                     </div>
@@ -386,8 +481,8 @@ export default function SMPInfoSite() {
         </main>
 
         <footer className="border-t border-neutral-800 mt-20">
-          <div className="max-w-6xl mx-auto px-8 py-8">
-            <p className="text-neutral-500 text-sm text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <p className="text-neutral-400 text-sm text-center">
               Questions or suggestions? Contact the server admins on Discord
             </p>
           </div>
