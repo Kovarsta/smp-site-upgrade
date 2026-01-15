@@ -13,6 +13,7 @@ import {
   LucideCakeSlice,
 } from "lucide-react";
 import { useState, useMemo } from "react";
+import TabTriggerBar from "./components/ui/TabTriggerBar";
 
 function filterAndSort(items, search, sortKey) {
   return items
@@ -43,6 +44,12 @@ export default function SMPInfoSite() {
     [datapacks, datapackSearch, datapackSort]
   );
 
+    const tabType = {
+        ABOUT : "about",
+        MODS : "mods",
+        DATAPACKS : "datapacks",
+    }
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-neutral-100">
       <div className="relative w-full">
@@ -69,20 +76,23 @@ export default function SMPInfoSite() {
         <main className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 pb-20">
           <Tabs defaultValue="about" className="w-full">
             <TabsList className="flex flex-col gap-3 h-auto sm:flex-row mb-5 bg-neutral-800/80 backdrop-blur-md border border-neutral-700 p-1.5 rounded-xl shadow-lg">
+            <TabTriggerBar tabType={tabType.MODS} text={tabType.MODS}/>
+                
+
               <TabsTrigger
-                value="about"
+                value={tabType.ABOUT}
                 className="w-full rounded-lg px-6 py-2 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-500/20 data-[state=active]:to-blue-600/20 data-[state=active]:text-blue-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-blue-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50"
               >
                 Getting Started
               </TabsTrigger>
               <TabsTrigger
-                value="mods"
+                value={tabType.MODS}
                 className="w-full rounded-lg px-6 py-2 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-emerald-500/20 data-[state=active]:to-emerald-600/20 data-[state=active]:text-emerald-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-emerald-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50"
               >
                 Server Mods ({mods.length})
               </TabsTrigger>
               <TabsTrigger
-                value="datapacks"
+                value={tabType.DATAPACKS}
                 className="w-full rounded-lg px-6 py-2 text-sm font-medium transition-all data-[state=active]:bg-gradient-to-br data-[state=active]:from-cyan-500/20 data-[state=active]:to-cyan-600/20 data-[state=active]:text-cyan-300 data-[state=active]:shadow-lg data-[state=active]:border data-[state=active]:border-cyan-500/30 data-[state=inactive]:text-neutral-400 data-[state=inactive]:hover:text-neutral-200 data-[state=inactive]:hover:bg-neutral-700/50"
               >
                 Datapacks ({datapacks.length})
