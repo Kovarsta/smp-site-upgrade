@@ -18,14 +18,9 @@ export function filterAndSort(items, search, sortKey) {
     });
 }
 
-export function filteredMods(mods, modSearch, modSort) { useMemo(
-    () => filterAndSort(mods, modSearch, modSort),
-    [mods, modSearch, modSort]
-)};
-
-export function filteredDatapacks (datapacks, datapackSearch, datapackSort) { useMemo(
-    () => filterAndSort(datapacks, datapackSearch, datapackSort),
-    [datapacks, datapackSearch, datapackSort]
-)};
-
-
+export function filteredData(data, dataSearch, dataSort) { 
+  return useMemo(
+    () => filterAndSort(data, dataSearch, dataSort),
+    [data, dataSearch, dataSort]
+  )
+};
